@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADS LAB — Ngajigaes</title>
+    <style>
+      body { margin: 0; padding: 16px; min-width: 280px; font-family: Arial, sans-serif; background: #0f172a; color: #e2e8f0; }
+      h1 { margin: 0 0 4px; font-size: 14px; color: #818cf8; }
+      .sub { margin: 0 0 16px; font-size: 11px; color: #64748b; }
+      .label { margin: 14px 0 6px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; }
+      .counter { margin: 0; font-size: 18px; font-weight: 700; }
+      .meta { margin-top: 6px; font-size: 11px; color: #cbd5e1; }
+      .divider { height: 1px; background: #1e293b; margin: 16px 0; }
+      input { width: 100%; box-sizing: border-box; padding: 8px 10px; margin-bottom: 8px; border: 1px solid #334155; border-radius: 6px; background: #1e293b; color: #e2e8f0; font-size: 12px; }
+      input:focus { outline: none; border-color: #6366f1; }
+      button { width: 100%; padding: 9px; border: none; border-radius: 6px; background: #6366f1; color: white; font-size: 13px; font-weight: 600; cursor: pointer; }
+      button:hover { background: #4f46e5; }
+      .saved { background: #22c55e !important; }
+      .status { margin-top: 6px; font-size: 11px; }
+      .status.ok { color: #4ade80; }
+      .status.err { color: #f87171; }
+      details { margin-top: 4px; }
+      summary { font-size: 11px; color: #818cf8; cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <h1>ADS LAB Collector</h1>
+    <p class="sub">Ngajigaes.id — Meta Ads Library scraper</p>
+
+    <p class="label">Dedup Counter</p>
+    <p class="counter" id="dedup-counter">0 baru / 0 duplikat</p>
+    <p class="meta" id="dedup-meta">Belum ada run scraping.</p>
+
+    <p class="label">Scroll Progress</p>
+    <p class="counter" id="scroll-counter">Scrolling... 0/0 iklan</p>
+    <p class="meta" id="scroll-meta">Auto-scroll belum aktif.</p>
+
+    <div class="divider"></div>
+
+    <details id="config-section">
+      <summary>⚙️ Konfigurasi Supabase</summary>
+      <div style="margin-top: 10px;">
+        <input type="text" id="supabase-url" placeholder="SUPABASE_URL (https://xxx.supabase.co)" />
+        <input type="password" id="supabase-key" placeholder="SUPABASE_ANON_KEY (eyJ...)" />
+        <button id="save-config">Simpan Konfigurasi</button>
+        <p class="status" id="config-status"></p>
+      </div>
+    </details>
+
+    <script src="./popup.js"></script>
+  </body>
+</html>
